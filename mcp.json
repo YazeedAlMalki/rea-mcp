@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "rea": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "${PLUGIN_ROOT}", "rea-mcp"],
+      "env": {
+        "REA_LEDGER_DIR": "${PLUGIN_DATA}/ledgers",
+        "REA_AUDIT_LOG": "${PLUGIN_DATA}/audit.jsonl"
+      }
+    }
+  }
+}

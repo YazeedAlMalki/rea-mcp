@@ -1,0 +1,8 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rea-mcp",
+  "version": "1.2.1",
+  "description": "Zero-trust reverse-engineering MCP: one tiered, token-budgeted facade over IDA Pro, IDA Free and Ghidra.",
+  "license": "Apache-2.0",
+  "keywords": ["reverse-engineering", "mcp", "ida", "ghidra", "security"]
+}

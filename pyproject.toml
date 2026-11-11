@@ -1,0 +1,36 @@
+[project]
+name = "rea-mcp"
+version = "1.2.1"
+description = "Zero-trust reverse-engineering MCP: one tiered, token-budgeted facade over IDA Pro, IDA Free and Ghidra"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.7", "blake3>=1.0", "mcp>=2.3,<3", "httpx>=0.27"]
+license = "Apache-2.0"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "mypy>=1.10"]
+
+[project.scripts]
+rea-mcp = "rea_mcp.__main__:main"
+rea-mcp-bootstrap = "rea_mcp.bootstrap:main"
+rea-mcp-doctor = "rea_mcp.doctor:main"
+rea-mcp-convert-txt = "rea_mcp.registry.txt_converter:main"
+rea-mcp-register = "rea_mcp.register:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+mypy_path = "src"
+plugins = ["pydantic.mypy"]
+disallow_any_explicit = true
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
